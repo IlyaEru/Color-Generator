@@ -30,6 +30,7 @@ export default function Header() {
     if (validInput) {
       dispatch(changeColor(inputColor));
       setInputColor('');
+      setValidInput(false);
     }
   };
 

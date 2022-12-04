@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { rgbToHex } from '../../utils';
 import { StyledColorView } from './ColorView.style';
 
@@ -15,6 +15,10 @@ export default function ColorView({
   isDarkened,
 }: ColorViewProps) {
   const [isCopied, setIsCopied] = useState(false);
+
+  useEffect(() => {
+    setIsCopied(false);
+  }, [color]);
 
   const colorViewClassNames = classNames({
     'colors__color--dark': isDarkened,
